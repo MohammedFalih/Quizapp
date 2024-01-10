@@ -1,0 +1,80 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: darkslateblue;
+}
+
+.app {
+    width: 90%;
+    background-color: white;
+    max-width: 600px;
+    padding: 30px;
+    margin: 100px auto 0;
+    border-radius: 10px;
+}
+
+h1 {
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.quiz {
+    margin-top: 15px;
+    background-color: aliceblue;
+    padding: 10px 5px;
+}
+
+hr {
+    outline: 2px solid darkslateblue;
+}
+
+.question {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.btn {
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn:hover{
+    background-color: black;
+    color: white;
+    transition: all 0.4s linear 0.1s;
+}
+
+.btn:active {
+    background-color: darkorchid;
+    transition: none;
+}
+
+#next {
+    padding: 6px 15px;
+    font-size: 16px;
+    font-weight: 900;
+    margin: 10px 0px;
+    background-color: darkslateblue;
+    color: aliceblue;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+}
+
+#next:hover {
+    background-color: brown;
+}
