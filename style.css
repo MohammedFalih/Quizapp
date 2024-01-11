@@ -50,12 +50,15 @@ hr {
     font-weight: bold;
 }
 
-.btn:hover{
+.btn:hover:not(:disabled){
     background-color: black;
     color: white;
     transition: all 0.4s linear 0.1s;
 }
 
+.btn:disabled {
+    cursor: no-drop;
+}
 
 
 #next {
@@ -72,13 +75,9 @@ hr {
     display: none;
 }
 
-#next:hover {
-    background-color: brown;
-}
-
 .correct {
-    background-color: red;
-    color: cyan;
+    background-color: rgb(193, 54, 54);
+    color: white;
 }
 
 .incorrect {
