@@ -1,3 +1,4 @@
+//  Store questions in array
 const questions = [
     {
         question: "Which of the following is used to create web pages??" ,
@@ -51,12 +52,14 @@ function quizStart() {
     showQuestion();
 }
 
+// function to display questions
 function showQuestion() {
-    reset();
+    reset(); 
     let currentQuestion = questions[currentQuestionIndex];
     let quesNo = currentQuestionIndex + 1;
     questionElement.innerHTML = quesNo + ". " + currentQuestion.question;
 
+    //  to iterate the choices using loop
     currentQuestion.answers.forEach(answer => {
         const button = document.createElement("button");
         button.innerHTML = answer.text;
@@ -69,17 +72,19 @@ function showQuestion() {
     })
 }
 
+// this function will clear the previous question options 
+
 function reset() {
     next.style.display = "none";
     while(answerButtons.firstChild) {
         answerButtons.removeChild(answerButtons.firstChild);
     }
 }
-
+//----> function add class 'correct' to true  and class 'incorrect' to false answers
 function selectAnswer(e) 
 {
     const selectedBtn = e.target;
-    const isCorrect = selectedBtn.dataset.correct === "true";
+    const isCorrect = selectedBtn.dataset.correct === "true"; // creates a data and store the correct answer
     if(isCorrect) {
         selectedBtn.classList.add("correct");
         score++;
@@ -87,7 +92,8 @@ function selectAnswer(e)
     else {
         selectedBtn.classList.add("incorrect");
     }
-
+    
+//--------> disable the choice buttons after choosing the options 
     Array.from(answerButtons.children).forEach( button => {
         if(button.dataset.correct === "true"){
             button.classList.add("correct")
@@ -97,12 +103,16 @@ function selectAnswer(e)
     next.style.display = "block";
 }
 
+//-------> this function will display the scores gained
+
 function showScore() {
     reset();
     questionElement.innerHTML = "You have Scored " + score;
     next.innerHTML = "Restart";
     next.style.display = "block";
 }
+
+//-------> function for handling next button
 
 function handleNext() {
     currentQuestionIndex++;
